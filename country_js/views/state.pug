@@ -1,12 +1,21 @@
-extends layout.pug  // Qui diciamo di copiare il contenuto della pagina layout
-block content // Qui inizia il contenuto della nuova pagina
-h1 #{state.name} //Recupero il nome dello stato
-.card(style='width: 18rem;')
-.card-body
-h5.card-title #{state.translations.it} 
-ul.list-group.list-group-flush
-li.list-group-item Capitale: #{state.capital}
-li.list-group-item Popolazione: #{state.population}
-li.list-group-item Nome in Giapponese #{state.translations.ja}
-.card-body
-a.card-link(href=`${state.wiki}` , target="_blank") Pagina Wikipedia
+extends layout
+
+block content
+  .container.mt-5
+    h1.text-primary= state.englishName
+    h2.text-secondary= state.name
+
+    .card.shadow-lg.mt-4
+      .card-body
+        table.table.table-bordered
+          tbody
+            tr
+              th Capitale:
+              td= state.capital
+            tr
+              th Popolazione:
+              td= state.population
+            tr
+              th Nome in Giapponese:
+              td= state.translations.ja
+        a.btn.btn-primary.mt-3(href=state.wiki target="_blank") 🌍 Pagina Wikipedia

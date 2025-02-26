@@ -14,13 +14,12 @@ router.get('/pages/:state/', function(req, res, next){
   //In questo caso richiamiamo la funzione next che passa l'errore al gestore degli errori
   //Il gestore degli errori è stato definito nell'app.js
   let stateCode = req.params.state; // Ottieni il codice dello stato dall'URL
-  let stateInfo = countries.info(stateCode, "ISO2"); // Ottieni le informazioni sullo stato
   if (stateCode === "undefined") {
       return next(createError(422, 'OOPS! State not found'));
     }
     else
     {
-      res.render('state', stateInfo);
+      res.render('state', {state: countries.info(req.params.state)}) ;
     }
 })
 
