@@ -1,7 +1,6 @@
-doctype html
-html
-  head
-    title Errore
-  body
-    h1 Errore
-    p #{message}
+extends layout
+
+block content
+  h1= message
+  h2= error.status
+  pre #{error.stack}
