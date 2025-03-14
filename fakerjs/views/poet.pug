@@ -1,0 +1,17 @@
+doctype html
+html
+    head
+        title #{title}
+        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/css/style.css')
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+    body
+        header.header.bg-primary.p-3
+            .container-fluid
+                h1.text-light #{title}   
+            button.btn.btn-info.m-3(onclick="window.location.href='/users'") Indietro
+        
+        .container.p-5     
+                p.h2 Email:  #{poet.card.email}       
+                p.h2 Website:  #{poet.card.website}   
+                p.h2 Country:  #{poet.card.address.country}          

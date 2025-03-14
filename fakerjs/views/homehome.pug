@@ -6,11 +6,9 @@ html
         link(rel='stylesheet', href='/css/style.css')
         meta(name="viewport" content="width=device-width, initial-scale=1")
     body
-        header.header.bg-success.p-3
+        header.header.bg-primary.p-3
             .container-fluid
                 h1.text-light #{title}
-        .container.mt-5
-                each poet in poets
-                    .card.col-4.m-2
-                        a(href=`users/${poet.card.username}`)
-                            h5.card-title #{poet.name}                     
+        .container 
+          h1 Homepage 
+          a(href="/users") Go to poets
